@@ -1,6 +1,4 @@
-// غيّر هذا الرابط إلى رابط خادمك بعد نشره (مثل Render/Railway)
-// للتجربة محلياً: http://localhost:3001
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+const API_BASE = import.meta.env.VITE_API_URL || 'https://sultan-api-dkcz.onrender.com'
 
 export async function apiPost(path, body) {
   const res = await fetch(`${API_BASE}${path}`, {
