@@ -35,6 +35,9 @@ export default function Navbar() {
           <NavLink to="/about" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
             ℹ️ حول
           </NavLink>
+          <NavLink to="/admin" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
+            🔒
+          </NavLink>
         </div>
 
         <div className="nav-user">

@@ -10,6 +10,7 @@ import TrainingCalculator from './pages/TrainingCalculator'
 import Premium from './pages/Premium'
 import SyncGuide from './pages/SyncGuide'
 import About from './pages/About'
+import Admin from './pages/Admin'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="premium" element={<Premium />} />
         <Route path="sync" element={<SyncGuide />} />
         <Route path="about" element={<About />} />
+        <Route path="admin" element={<Admin />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
