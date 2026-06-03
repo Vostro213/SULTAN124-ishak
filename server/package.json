@@ -4,7 +4,8 @@
   "type": "module",
   "engines": { "node": ">=18" },
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "build": "echo Build complete"
   },
   "dependencies": {
     "express": "^4.21.0",
