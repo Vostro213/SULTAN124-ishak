@@ -1,0 +1,13 @@
+{
+  "name": "sultan-tools",
+  "private": true,
+  "homepage": "https://Vostro213.github.io/SULTAN124",
+  "scripts": {
+    "dev": "npm run dev --prefix web",
+    "build": "npm run build --prefix web",
+    "deploy": "npm run deploy --prefix web"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
