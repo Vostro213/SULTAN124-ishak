@@ -1,5 +1,5 @@
 /** اسم repository على GitHub — يجب أن يطابق اسم الـ repo بالضبط */
-export const REPO_NAME = 'SULTAN124'
+export const REPO_NAME = 'SULTAN124-ishak'
 
 export const GITHUB_USER = 'Vostro213'
 
