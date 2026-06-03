@@ -19,19 +19,28 @@ export default function Admin() {
   const handleLogin = async (e) => {
     e.preventDefault()
     setError('')
-    const res = await apiPost('/admin/login', { username, password })
-    if (res.error) { setError(res.error); return }
-    localStorage.setItem('sultan_admin_token', res.token)
-    setToken(res.token)
-    fetchData(res.token)
+    try {
+      const res = await apiPost('/admin/login', { username, password })
+      if (res.error) { setError(res.error); return }
+      localStorage.setItem('sultan_admin_token', res.token)
+      setToken(res.token)
+      fetchData(res.token)
+    } catch (err) {
+      setError(err.message || 'حدث خطأ في الاتصال')
+    }
   }
 
   const fetchData = async (t) => {
     setStep('loading')
-    const res = await apiGet('/admin/visits', t)
-    if (res.error) { setStep('login'); localStorage.removeItem('sultan_admin_token'); setError('انتهت الجلسة'); return }
-    setData(res)
-    setStep('panel')
+    try {
+      const res = await apiGet('/admin/visits', t)
+      if (res.error) { setStep('login'); localStorage.removeItem('sultan_admin_token'); setError('انتهت الجلسة'); return }
+      setData(res)
+      setStep('panel')
+    } catch (err) {
+      setStep('login')
+      setError(err.message || 'حدث خطأ')
+    }
   }
 
   const logout = () => {
