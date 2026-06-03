@@ -20,7 +20,7 @@ export default function Admin() {
     e.preventDefault()
     setError('')
     try {
-      const res = await apiPost('/admin/login', { username, password })
+      const res = await apiPost('/api/admin/login', { username, password })
       if (res.error) { setError(res.error); return }
       localStorage.setItem('sultan_admin_token', res.token)
       setToken(res.token)
@@ -33,7 +33,7 @@ export default function Admin() {
   const fetchData = async (t) => {
     setStep('loading')
     try {
-      const res = await apiGet('/admin/visits', t)
+      const res = await apiGet('/api/admin/visits', t)
       if (res.error) { setStep('login'); localStorage.removeItem('sultan_admin_token'); setError('انتهت الجلسة'); return }
       setData(res)
       setStep('panel')

@@ -10,7 +10,7 @@ export default function Layout() {
   useEffect(() => {
     const base = getApiBase()
     if (base.includes('localhost') || base.includes('127.0.0.1')) return
-    apiPost('/track', {
+    apiPost('/api/track', {
       page: location.pathname,
       referrer: document.referrer || '',
     }).catch(() => {})
